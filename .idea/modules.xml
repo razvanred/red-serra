@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/red-serra.iml" filepath="$PROJECT_DIR$/.idea/modules/red-serra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/red-serra_main.iml" filepath="$PROJECT_DIR$/.idea/modules/red-serra_main.iml" group="red-serra" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/red-serra_test.iml" filepath="$PROJECT_DIR$/.idea/modules/red-serra_test.iml" group="red-serra" />
+    </modules>
+  </component>
+</project>

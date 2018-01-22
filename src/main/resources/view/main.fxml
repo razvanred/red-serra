@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+
+<BorderPane xmlns:fx="http://javafx.com/fx" fx:controller="control.Main" prefHeight="500" prefWidth="700">
+
+    <top>
+        <BorderPane>
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <left>
+                <JFXTextField fx:id="txfPort" labelFloat="true" promptText="%port" BorderPane.alignment="CENTER"/>
+            </left>
+
+            <right>
+                <JFXToggleButton fx:id="switchServer" onAction="#startStopUDP" text="%server"/>
+            </right>
+
+        </BorderPane>
+    </top>
+
+    <center>
+        <JFXTabPane fx:id="tabPane">
+
+            <Tab text="%lights" fx:id="tabLights">
+                <fx:include source="lights.fxml"/>
+            </Tab>
+
+            <Tab text="%stats" fx:id="tabStats">
+                <fx:include source="stats.fxml"/>
+            </Tab>
+
+        </JFXTabPane>
+    </center>
+
+</BorderPane>
