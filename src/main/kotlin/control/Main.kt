@@ -3,7 +3,6 @@ package control
 import com.jfoenix.controls.JFXTabPane
 import com.jfoenix.controls.JFXTextField
 import com.jfoenix.controls.JFXToggleButton
-import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.Alert
@@ -38,8 +37,9 @@ class Main:Initializable {
     @FXML
     private fun startStopUDP(){
         if(switchServer.isSelected){
+
             try {
-                server=ServerTask()
+                server = ServerTask(txfPort.text.toInt())
             } catch (bind: BindException) {
                 val alert = Alert(Alert.AlertType.ERROR)
                 alert.contentText = rb.getString("port_already_used")
@@ -47,6 +47,9 @@ class Main:Initializable {
                 alert.title = rb.getString("app_name")
 
                 alert.showAndWait()
+
+                switchServer.isSelected = false
+
                 return
             }
             server.start()
@@ -54,7 +57,9 @@ class Main:Initializable {
             txfPort.isDisable=true
 
         }else{
+
             server.explode()
+            txfPort.isDisable = false
         }
     }
 

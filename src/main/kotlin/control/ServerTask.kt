@@ -4,9 +4,9 @@ import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.SocketException
 
-class ServerTask : Thread() {
+class ServerTask(PORT: Int) : Thread() {
 
-    private val socket = DatagramSocket(1234)
+    private val socket = DatagramSocket(PORT)
     private lateinit var packet: DatagramPacket
 
     @Volatile
@@ -32,7 +32,6 @@ class ServerTask : Thread() {
 
 
     fun explode() {
-        //boom = true
         if (!socket.isClosed)
             socket.close()
     }

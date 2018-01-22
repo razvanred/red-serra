@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTabPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.layout.BorderPane?>
-
-<?import javafx.geometry.Insets?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXToggleButton?>
-
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
 <BorderPane xmlns:fx="http://javafx.com/fx" fx:controller="control.Main" prefHeight="500" prefWidth="700">
 
     <top>
@@ -20,7 +18,7 @@
             </left>
 
             <right>
-                <JFXToggleButton fx:id="switchServer" onAction="#startStopUDP" text="%server"/>
+                <JFXToggleButton fx:id="switchServer" onAction="#startStopUDP" text="%server" disable="true"/>
             </right>
 
         </BorderPane>
