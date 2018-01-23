@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="control.Temp">
+
+    <padding>
+        <Insets topRightBottomLeft="20"/>
+    </padding>
+
+    <top>
+        <HBox spacing="10" BorderPane.alignment="TOP_CENTER">
+            <Label text="%temperature" style="-fx-font-weight: bold"/>
+            <HBox spacing="2">
+                <Label fx:id="lblTemperature"/>
+                <Label text="°C"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="10" BorderPane.alignment="CENTER">
+            <Label text="%brightness" style="-fx-font-weight: bold"/>
+            <Label fx:id="lblLight"/>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" BorderPane.alignment="BOTTOM_CENTER">
+            <Label text="%humidity" style="-fx-font-weight: bold"/>
+            <HBox spacing="2">
+                <Label fx:id="lblHumidity"/>
+                <Label text=" % "/>
+            </HBox>
+        </HBox>
+    </bottom>
+
+
+</BorderPane>

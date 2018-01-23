@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXTabPane
 import com.jfoenix.controls.JFXTextField
 import com.jfoenix.controls.JFXToggleButton
 import javafx.fxml.FXML
+import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.control.Alert
 import javafx.scene.control.Tab
@@ -12,6 +13,10 @@ import java.net.URL
 import java.util.*
 
 class Main:Initializable {
+
+    lateinit var lights: Lights
+
+    lateinit var stats: Stats
 
     @FXML
     private lateinit var tabPane:JFXTabPane
@@ -39,7 +44,7 @@ class Main:Initializable {
         if(switchServer.isSelected){
 
             try {
-                server = ServerTask(txfPort.text.toInt())
+                server = ServerTask(txfPort.text.toInt(), lights, stats)
             } catch (bind: BindException) {
                 val alert = Alert(Alert.AlertType.ERROR)
                 alert.contentText = rb.getString("port_already_used")
@@ -73,6 +78,18 @@ class Main:Initializable {
                 txfPort.text = newValue.replace("[^\\d]".toRegex(), "")
             switchServer.isDisable = newValue.isEmpty() || Integer.parseInt(newValue) < 1024 || Integer.parseInt(newValue) > 49151
         }
+
+        var loader = FXMLLoader(javaClass.getResource("/view/lights.fxml"), rb)
+
+        tabLights.content = loader.load()
+
+        lights = loader.getController<Lights>()
+
+        loader = FXMLLoader(javaClass.getResource("/view/stats.fxml"), rb)
+
+        tabStats.content = loader.load()
+
+        stats = loader.getController<Stats>()
 
     }
 

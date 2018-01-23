@@ -28,12 +28,10 @@
         <JFXTabPane fx:id="tabPane">
 
             <Tab text="%lights" fx:id="tabLights">
-                <fx:include source="lights.fxml"/>
+                <!--<fx:include source="lights.fxml"/>-->
             </Tab>
 
-            <Tab text="%stats" fx:id="tabStats">
-                <fx:include source="stats.fxml"/>
-            </Tab>
+            <Tab text="%stats" fx:id="tabStats"/>
 
         </JFXTabPane>
     </center>

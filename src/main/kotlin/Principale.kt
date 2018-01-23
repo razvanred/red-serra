@@ -1,12 +1,7 @@
-import control.Lights
-import control.Main
-import control.ServerTask
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
-import javafx.scene.control.Alert
 import javafx.stage.Stage
-import java.net.BindException
 import java.util.*
 
 
@@ -25,7 +20,7 @@ class Principale: Application() {
 
         val rb = ResourceBundle.getBundle("bundle.lang",Locale.ITALIAN)
 
-        val fxLoader=FXMLLoader(javaClass.getResource("view/main.fxml"), rb)
+        val fxLoader = FXMLLoader(javaClass.getResource("/view/main.fxml"), rb)
 
         primaryStage.scene= Scene(fxLoader.load())
 
